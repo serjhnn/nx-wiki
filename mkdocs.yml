@@ -11,6 +11,7 @@ theme:
   variant: modern
   custom_dir: overrides
   favicon: assets/icons/icon.svg
+  logo: assets/icons/logo.svg
   font:
     text: Inter
     code: JetBrains Mono
