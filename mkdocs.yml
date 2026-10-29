@@ -83,3 +83,6 @@ nav:
       - mechanics/index.md
       - Navier–Stokes equations: mechanics/navier-stokes.md
       - Euler equations: mechanics/euler-equations.md
+  - Networking:
+      - networking/index.md
+      - MAC layer: networking/mac-layer.md
