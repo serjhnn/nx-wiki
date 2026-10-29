@@ -2,13 +2,15 @@
 
 A personal knowledge base: one place to collect everything I learn, from notes, how-tos and snippets to references and ideas.
 
-The plan is to publish it as a website so the knowledge is easy to browse and search from anywhere.
+📖 **Read it online: [serjhnn.github.io/nx-wiki](https://serjhnn.github.io/nx-wiki/)**
+
+The wiki is published as a website, so the knowledge is easy to browse and search from anywhere.
 
 ## Goals
 
 - **One home for knowledge.** Stop scattering notes across apps, bookmarks and chat histories.
 - **Plain text first.** Write in Markdown, so notes stay readable, portable and easy to version with git.
-- **Easy to find things.** Clear structure, cross-links between pages, and search once it's a web page.
+- **Easy to find things.** Clear structure, cross-links between pages, and full-text search on the website.
 - **Grows over time.** Small, frequent additions beat big rewrites.
 
 ## What goes in here
@@ -61,7 +63,7 @@ Then open <http://127.0.0.1:8000>. The page reloads automatically when you save 
 
 ### Publishing
 
-Every push to `main` runs the **Deploy site** GitHub Action, which builds the site and publishes it to GitHub Pages.
+Every push to `main` runs the **Deploy site** GitHub Action, which builds the site and publishes it to GitHub Pages at <https://serjhnn.github.io/nx-wiki/>.
 
 One-time setup: in the repository on GitHub, go to **Settings → Pages** and set **Source** to **GitHub Actions**.
 
