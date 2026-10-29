@@ -82,3 +82,4 @@ nav:
   - Mechanics:
       - mechanics/index.md
       - Navier–Stokes equations: mechanics/navier-stokes.md
+      - Euler equations: mechanics/euler-equations.md

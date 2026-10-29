@@ -14,3 +14,4 @@ Mechanics studies how things move and deform when forces act on them.
 ## Pages
 
 - [Navier–Stokes equations](navier-stokes.md): the equations of motion of viscous fluids
+- [Euler equations](euler-equations.md): inviscid flow, shock waves, vorticity and Bernoulli's equation

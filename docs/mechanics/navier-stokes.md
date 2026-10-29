@@ -130,7 +130,7 @@ graph TD
   NS -->|"steady, fully developed pipe flow"| P[Hagen–Poiseuille flow]
 ```
 
-**Euler equations** (inviscid flow, $\mu = 0$):
+**[Euler equations](euler-equations.md)** (inviscid flow, $\mu = 0$):
 
 $$
 \rho \frac{D \mathbf{u}}{D t} = -\nabla p + \mathbf{f}
