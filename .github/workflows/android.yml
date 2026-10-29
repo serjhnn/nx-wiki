@@ -111,12 +111,19 @@ jobs:
           script: |
             mkdir -p screenshots
             adb install out/nx-wiki-*.apk
+            sleep 30
+            adb shell am broadcast -a android.intent.action.CLOSE_SYSTEM_DIALOGS
             adb shell am start -W -n io.github.serjhnn.nxwiki/.MainActivity
             sleep 15
             adb exec-out screencap -p > screenshots/1-home.png
             adb shell input swipe 540 1800 540 600 400
             sleep 3
             adb exec-out screencap -p > screenshots/2-scrolled.png
+            adb shell input keyevent KEYCODE_HOME
+            sleep 3
+            adb shell input swipe 540 2000 540 600 300
+            sleep 3
+            adb exec-out screencap -p > screenshots/3-app-drawer.png
             adb logcat -d > screenshots/logcat.txt
 
       - uses: actions/upload-artifact@v4
