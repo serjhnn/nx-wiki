@@ -1,0 +1,116 @@
+/* Dark palette for the Read the Docs theme */
+:root {
+  --bg: #1a1b1e;
+  --bg-raised: #232428;
+  --bg-code: #0d1117;
+  --sidebar: #141517;
+  --sidebar-active: #2a2c31;
+  --border: #33353b;
+  --text: #d4d4d8;
+  --text-strong: #f4f4f5;
+  --text-muted: #9a9ba3;
+  --link: #6cb6ff;
+  --link-visited: #b392f0;
+  --accent: #2b6cb0;
+}
+
+/* Page */
+body, .wy-body-for-nav, .wy-nav-content-wrap, .wy-nav-content { background: var(--bg); color: var(--text); }
+.wy-nav-content { max-width: 960px; }
+.rst-content h1, .rst-content h2, .rst-content h3, .rst-content h4, .rst-content h5, .rst-content h6 { color: var(--text-strong); }
+a, a:visited { color: var(--link); }
+a:hover { color: #96cbff; }
+hr { border-top-color: var(--border); }
+footer, .rst-footer-buttons, footer p { color: var(--text-muted); }
+.wy-breadcrumbs li, .wy-breadcrumbs a { color: var(--text-muted); }
+.wy-breadcrumbs + hr, .rst-content hr { border-color: var(--border); }
+.btn-neutral { background-color: var(--bg-raised) !important; color: var(--text) !important; }
+.btn-neutral:hover { background-color: var(--sidebar-active) !important; }
+
+/* Sidebar */
+.wy-nav-side, .wy-menu-vertical { background: var(--sidebar); }
+.wy-side-nav-search, .wy-nav-top { background-color: var(--accent); }
+.wy-side-nav-search input[type=text] { background: var(--bg); color: var(--text); border-color: var(--border); box-shadow: none; }
+.wy-menu-vertical a { color: var(--text-muted); }
+.wy-menu-vertical a:hover { background-color: var(--sidebar-active); color: var(--text-strong); }
+.wy-menu-vertical li.current { background: var(--bg-raised); }
+.wy-menu-vertical li.current > a, .wy-menu-vertical li.on a,
+.wy-menu-vertical li.current > a:hover, .wy-menu-vertical li.on a:hover {
+  background: var(--sidebar-active); color: var(--text-strong); border: none;
+}
+.wy-menu-vertical li.current a { color: var(--text); border-right: none; }
+.wy-menu-vertical li.toctree-l2.current > a, .wy-menu-vertical li.toctree-l2.current li.toctree-l3 > a,
+.wy-menu-vertical li.toctree-l3.current > a, .wy-menu-vertical li.toctree-l3.current li.toctree-l4 > a {
+  background: var(--bg-raised);
+}
+.wy-menu-vertical p.caption, .wy-menu-vertical .caption-text { color: var(--link); }
+.rst-versions, .rst-versions .rst-current-version { background: var(--sidebar); border-top: 1px solid var(--border); }
+
+/* Inline code and code blocks */
+.rst-content code, .rst-content tt, code {
+  background: var(--bg-raised); border-color: var(--border); color: #ff938a;
+}
+.rst-content pre { position: relative; }
+.rst-content pre code, .rst-content pre code.hljs {
+  background: var(--bg-code); color: #e6edf3; border: 1px solid var(--border); border-radius: 4px; font-size: 13px;
+}
+.rst-content .admonition code { background: rgba(0, 0, 0, 0.25); color: var(--text-strong); border-color: var(--border); }
+.copy-button {
+  position: absolute; top: 6px; right: 6px; padding: 2px 8px; font-size: 12px;
+  background: var(--bg-raised); color: var(--text-muted); border: 1px solid var(--border); border-radius: 4px;
+  cursor: pointer; opacity: 0; transition: opacity 0.15s;
+}
+.rst-content pre:hover .copy-button, .copy-button:focus { opacity: 1; }
+.copy-button:hover { color: var(--text-strong); }
+
+/* Tables */
+.rst-content table.docutils, .wy-table-bordered-all { border-color: var(--border); }
+td, th { border-color: var(--border) !important; }
+.rst-content table.docutils thead th { background: var(--bg-raised); color: var(--text-strong); }
+.rst-content table.docutils:not(.field-list) tr:nth-child(2n-1) td { background-color: #1f2024; }
+
+/* Callouts (admonitions and collapsible details) */
+.rst-content .admonition, .rst-content details {
+  background: var(--bg-raised) !important; color: var(--text); border-left: 4px solid #6ab0de; border-radius: 4px;
+}
+.rst-content .admonition .admonition-title { background: rgba(106, 176, 222, 0.18); color: var(--text-strong); }
+.rst-content .tip, .rst-content .hint, .rst-content .success, .rst-content details.tip { border-left-color: #1abc9c; }
+.rst-content .tip .admonition-title, .rst-content .hint .admonition-title { background: rgba(26, 188, 156, 0.18); }
+.rst-content .warning, .rst-content .caution, .rst-content details.warning { border-left-color: #f0b37e; }
+.rst-content .warning .admonition-title, .rst-content .caution .admonition-title { background: rgba(240, 179, 126, 0.18); }
+.rst-content .danger, .rst-content .error, .rst-content details.danger { border-left-color: #f29f97; }
+.rst-content .danger .admonition-title, .rst-content .error .admonition-title { background: rgba(242, 159, 151, 0.18); }
+.rst-content details { padding: 0 12px; margin-bottom: 24px; }
+.rst-content details summary { padding: 8px 0; color: var(--text-strong); font-weight: 700; cursor: pointer; }
+
+/* Tabs (pymdownx.tabbed) */
+.tabbed-set { display: flex; flex-wrap: wrap; margin-bottom: 24px; }
+.tabbed-set > input { display: none; }
+.tabbed-labels { display: flex; width: 100%; border-bottom: 1px solid var(--border); }
+.tabbed-labels > label { padding: 6px 14px; color: var(--text-muted); cursor: pointer; border-bottom: 2px solid transparent; font-weight: 600; }
+.tabbed-labels > label:hover { color: var(--text-strong); }
+.tabbed-content { width: 100%; padding-top: 12px; }
+.tabbed-block { display: none; }
+.tabbed-set > input:nth-child(1):checked ~ .tabbed-content > .tabbed-block:nth-child(1),
+.tabbed-set > input:nth-child(2):checked ~ .tabbed-content > .tabbed-block:nth-child(2),
+.tabbed-set > input:nth-child(3):checked ~ .tabbed-content > .tabbed-block:nth-child(3),
+.tabbed-set > input:nth-child(4):checked ~ .tabbed-content > .tabbed-block:nth-child(4),
+.tabbed-set > input:nth-child(5):checked ~ .tabbed-content > .tabbed-block:nth-child(5),
+.tabbed-set > input:nth-child(6):checked ~ .tabbed-content > .tabbed-block:nth-child(6) { display: block; }
+.tabbed-set > input:nth-child(1):checked ~ .tabbed-labels > label:nth-child(1),
+.tabbed-set > input:nth-child(2):checked ~ .tabbed-labels > label:nth-child(2),
+.tabbed-set > input:nth-child(3):checked ~ .tabbed-labels > label:nth-child(3),
+.tabbed-set > input:nth-child(4):checked ~ .tabbed-labels > label:nth-child(4),
+.tabbed-set > input:nth-child(5):checked ~ .tabbed-labels > label:nth-child(5),
+.tabbed-set > input:nth-child(6):checked ~ .tabbed-labels > label:nth-child(6) { color: var(--link); border-bottom-color: var(--link); }
+
+/* Task lists */
+.rst-content .task-list-item { list-style: none; }
+.rst-content .task-list-item input { margin: 0 6px 0 -20px; accent-color: var(--link); }
+
+/* Diagrams */
+.rst-content .mermaid { margin-bottom: 24px; text-align: center; }
+
+/* Search results */
+.search-results article { border-top-color: var(--border); }
+form .search-query { background: var(--bg-raised); color: var(--text); border-color: var(--border); }

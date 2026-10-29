@@ -25,9 +25,10 @@ The plan is to publish it as a website so the knowledge is easy to browse and se
 nx-wiki/
 ├── README.md                  # this file
 ├── mkdocs.yml                 # site config: title, theme, navigation
-├── requirements.txt           # Python dependencies (MkDocs + Material)
+├── requirements.txt           # Python dependencies
 ├── docs/                      # the knowledge itself, as Markdown pages
 │   ├── index.md               # start page
+│   ├── assets/                # dark theme stylesheet and small scripts
 │   └── <topic>/               # one folder per topic area
 └── .github/workflows/deploy.yml  # publishes the site to GitHub Pages
 ```
@@ -45,7 +46,7 @@ See `docs/getting-started/writing-pages.md` for a formatting cheat sheet (callou
 
 ## The website
 
-The site is built with [MkDocs](https://www.mkdocs.org/) and the [Material](https://squidfunk.github.io/mkdocs-material/) theme.
+The site is built with [MkDocs](https://www.mkdocs.org/) and its built-in [Read the Docs](https://www.mkdocs.org/user-guide/choosing-your-theme/#readthedocs) theme, restyled dark by `docs/assets/dark.css`. `docs/assets/extra.js` adds copy buttons to code blocks and renders [Mermaid](https://mermaid.js.org/) diagrams.
 
 ### Preview locally
 
@@ -63,8 +64,6 @@ Then open <http://127.0.0.1:8000>. The page reloads automatically when you save 
 Every push to `main` runs the **Deploy site** GitHub Action, which builds the site and publishes it to GitHub Pages.
 
 One-time setup: in the repository on GitHub, go to **Settings → Pages** and set **Source** to **GitHub Actions**.
-
-> **Note:** Material for MkDocs reaches end of life on May 5, 2027. Its successor, [Zensical](https://zensical.org/), is built by the same team and reads the existing `mkdocs.yml`, so migrating later should be straightforward.
 
 ## Status
 
