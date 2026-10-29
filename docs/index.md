@@ -7,3 +7,4 @@ Use the search bar at the top to find anything, or browse the sections in the na
 ## Sections
 
 - [Getting started](getting-started/index.md): how this wiki is organised and how to add to it
+- [Mechanics](mechanics/index.md): classical, continuum and fluid mechanics

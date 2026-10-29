@@ -38,6 +38,12 @@ theme:
 
 extra_css:
   - assets/style.css
+  - https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css
+
+extra_javascript:
+  - https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js
+  - https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js
+  - assets/katex.js
 
 markdown_extensions:
   - admonition
@@ -48,6 +54,8 @@ markdown_extensions:
   - def_list
   - toc:
       permalink: true
+  - pymdownx.arithmatex:
+      generic: true
   - pymdownx.details
   - pymdownx.highlight:
       anchor_linenums: true
@@ -71,3 +79,6 @@ nav:
   - Getting started:
       - getting-started/index.md
       - Writing pages: getting-started/writing-pages.md
+  - Mechanics:
+      - mechanics/index.md
+      - Navier–Stokes equations: mechanics/navier-stokes.md

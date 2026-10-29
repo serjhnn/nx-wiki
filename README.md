@@ -42,7 +42,7 @@ nx-wiki/
 5. Link to related pages with relative links, e.g. `[Git basics](../git/basics.md)`.
 6. Commit and push.
 
-See `docs/getting-started/writing-pages.md` for a formatting cheat sheet (callouts, tabs, code blocks, diagrams).
+See `docs/getting-started/writing-pages.md` for a formatting cheat sheet (callouts, tabs, code blocks, diagrams, math).
 
 ## The website
 

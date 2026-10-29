@@ -50,3 +50,11 @@ zensical serve
 graph LR
   A[Write Markdown] --> B[Push to GitHub] --> C[Site updates]
 ```
+
+### Math
+
+Inline math goes between single dollar signs, like $E = mc^2$. Display math goes between double dollar signs:
+
+$$
+\int_0^\infty e^{-x^2} \, dx = \frac{\sqrt{\pi}}{2}
+$$

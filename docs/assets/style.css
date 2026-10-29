@@ -108,3 +108,7 @@
   background-color: var(--md-footer-bg-color--dark);
   border-top: 1px solid var(--md-default-fg-color--lightest);
 }
+
+/* Math (KaTeX): keep display equations compact */
+.md-typeset div.arithmatex { margin: 1em 0; overflow-x: auto; overflow-y: hidden; }
+.md-typeset div.arithmatex .katex-display { margin: 0; }
