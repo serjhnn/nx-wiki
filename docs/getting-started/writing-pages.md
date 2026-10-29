@@ -4,7 +4,7 @@
 
 1. Create a Markdown file under `docs/`, in a topic folder, e.g. `docs/git/rebase.md`.
 2. Add it to the `nav` section of `mkdocs.yml` so it shows up in the navigation.
-3. Preview it with `mkdocs serve`, then commit and push.
+3. Preview it with `zensical serve`, then commit and push.
 
 ## Formatting cheat sheet
 
@@ -22,7 +22,7 @@
 ### Code with a copy button
 
 ```bash
-mkdocs serve
+zensical serve
 ```
 
 ### Tabs

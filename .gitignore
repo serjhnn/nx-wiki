@@ -4,3 +4,6 @@ site/
 # Python
 .venv/
 __pycache__/
+
+# Zensical build cache
+.cache/

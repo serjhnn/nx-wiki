@@ -1,0 +1,110 @@
+/* Warm, Anthropic-docs-inspired look on top of Zensical's modern theme */
+@import url("https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600&display=swap");
+
+:root {
+  --nx-serif: "Source Serif 4", Georgia, "Times New Roman", serif;
+  --nx-clay: #d97757;
+  --nx-clay-deep: #b85c3c;
+}
+
+/* Light: cream paper, near-black ink */
+[data-md-color-scheme="default"] {
+  --md-primary-fg-color: #faf9f5;
+  --md-primary-fg-color--light: #f0eee6;
+  --md-primary-fg-color--dark: #e8e6dc;
+  --md-primary-bg-color: #141413;
+  --md-primary-bg-color--light: #14141399;
+  --md-accent-fg-color: var(--nx-clay-deep);
+  --md-accent-fg-color--transparent: #b85c3c1a;
+  --md-default-bg-color: #faf9f5;
+  --md-default-fg-color: #141413e0;
+  --md-default-fg-color--light: #1414139e;
+  --md-default-fg-color--lighter: #14141352;
+  --md-default-fg-color--lightest: #1414131f;
+  --md-code-bg-color: #f0eee6;
+  --md-typeset-color: #141413e6;
+  --md-typeset-a-color: var(--nx-clay-deep);
+  --md-footer-bg-color: #f0eee6;
+  --md-footer-bg-color--dark: #e8e6dc;
+  --md-footer-fg-color: #141413;
+  --md-footer-fg-color--light: #1414139e;
+  --md-footer-fg-color--lighter: #14141366;
+}
+
+/* Dark: warm near-black, cream text, clay accent */
+[data-md-color-scheme="slate"] {
+  --md-primary-fg-color: #141413;
+  --md-primary-fg-color--light: #1f1e1d;
+  --md-primary-fg-color--dark: #0f0f0e;
+  --md-primary-bg-color: #faf9f5;
+  --md-primary-bg-color--light: #faf9f5a6;
+  --md-accent-fg-color: var(--nx-clay);
+  --md-accent-fg-color--transparent: #d977571f;
+  --md-default-bg-color: #141413;
+  --md-default-bg-color--light: #141413e6;
+  --md-default-fg-color: #faf9f5d6;
+  --md-default-fg-color--light: #faf9f58f;
+  --md-default-fg-color--lighter: #faf9f552;
+  --md-default-fg-color--lightest: #faf9f51a;
+  --md-code-fg-color: #e8e6dc;
+  --md-code-bg-color: #1f1e1d;
+  --md-code-bg-color--light: #1f1e1de6;
+  --md-code-bg-color--lighter: #1f1e1d8a;
+  --md-typeset-color: #faf9f5d6;
+  --md-typeset-a-color: var(--nx-clay);
+  --md-footer-bg-color: #1a1918;
+  --md-footer-bg-color--dark: #141413;
+  --md-footer-fg-color: #faf9f5;
+  --md-footer-fg-color--light: #faf9f58f;
+  --md-footer-fg-color--lighter: #faf9f552;
+}
+
+/* Header and tabs blend into the page, separated by a hairline */
+.md-header, .md-tabs {
+  background-color: var(--md-default-bg-color);
+  color: var(--md-default-fg-color);
+}
+.md-header { box-shadow: none; }
+.md-tabs { border-bottom: 1px solid var(--md-default-fg-color--lightest); }
+.md-tabs__link--active, .md-tabs__item--active .md-tabs__link { color: var(--md-accent-fg-color); }
+
+/* Serif display type for titles and headings */
+.md-header__topic:first-child,
+.md-typeset h1, .md-typeset h2, .md-typeset h3 {
+  font-family: var(--nx-serif);
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  color: var(--md-default-fg-color);
+}
+.md-header__topic:first-child { font-size: 1.15rem; }
+.md-typeset h1 { font-size: 2.3em; color: var(--md-typeset-color); }
+.md-typeset h2 { font-size: 1.6em; }
+.md-typeset h3 { font-size: 1.25em; }
+
+/* Links: underlined like the Anthropic docs */
+.md-typeset a { text-decoration: underline; text-underline-offset: 0.2em; text-decoration-thickness: 1px; }
+.md-typeset a:hover { color: var(--md-accent-fg-color); }
+.md-typeset .headerlink { text-decoration: none; }
+
+/* Sidebar: active page as a soft pill */
+.md-nav__link--active {
+  color: var(--md-accent-fg-color);
+}
+.md-sidebar--primary .md-nav__link--active {
+  background: var(--md-accent-fg-color--transparent);
+  border-radius: 0.4rem;
+}
+
+/* Rounded, borderless-feel code blocks and callouts */
+.md-typeset pre > code,
+.md-typeset .highlight { border-radius: 0.6rem; }
+.md-typeset .admonition, .md-typeset details { border-radius: 0.6rem; }
+
+/* Search box */
+.md-search__form { border-radius: 0.5rem; }
+
+/* Footer strip matches the page */
+.md-footer-meta {
+  background-color: var(--md-footer-bg-color--dark);
+  border-top: 1px solid var(--md-default-fg-color--lightest);
+}
