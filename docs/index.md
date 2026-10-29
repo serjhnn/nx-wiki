@@ -12,4 +12,6 @@ Use the search bar at the top to find anything, or browse the sections in the na
 
 ## Reading offline
 
-Download [nx-wiki-offline.zip](https://serjhnn.github.io/nx-wiki/nx-wiki-offline.zip), unzip it and open `nx-wiki/index.html` in a browser. Everything works without internet: search, math, diagrams and fonts. The download is rebuilt every time the wiki changes.
+**On your phone:** install the wiki as an app. In Chrome on Android, tap **⋮ → Install app**; on iPhone, tap **Share → Add to Home Screen** in Safari. The whole wiki is saved on the device and works without internet.
+
+**On a computer:** Download [nx-wiki-offline.zip](https://serjhnn.github.io/nx-wiki/nx-wiki-offline.zip), unzip it and open `nx-wiki/index.html` in a browser. Everything works without internet: search, math, diagrams and fonts. The download is rebuilt every time the wiki changes.

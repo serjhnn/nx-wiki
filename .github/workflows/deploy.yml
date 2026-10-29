@@ -26,6 +26,8 @@ jobs:
       - run: pip install -r requirements.txt
       - name: Build site
         run: zensical build --strict
+      - name: Generate service worker
+        run: python scripts/build_sw.py site
       - name: Build offline copy
         run: |
           NX_OFFLINE=true NX_SITE_DIR=site-offline zensical build --strict

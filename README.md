@@ -32,7 +32,11 @@ nx-wiki/
 │   ├── index.md               # start page
 │   ├── assets/style.css       # custom look: colors, fonts, headings
 │   ├── assets/vendor/katex/   # bundled KaTeX for math rendering
+│   ├── assets/icons/          # app icons
+│   ├── manifest.webmanifest   # makes the site installable as an app
 │   └── <topic>/               # one folder per topic area
+├── overrides/main.html        # adds the app manifest and icons to every page
+├── scripts/                   # generates the service worker at deploy time
 └── .github/workflows/deploy.yml  # publishes the site to GitHub Pages
 ```
 
@@ -67,6 +71,14 @@ Then open <http://127.0.0.1:8000>. The page reloads automatically when you save 
 Every push to `main` runs the **Deploy site** GitHub Action, which builds the site and publishes it to GitHub Pages at <https://serjhnn.github.io/nx-wiki/>.
 
 One-time setup: in the repository on GitHub, go to **Settings → Pages** and set **Source** to **GitHub Actions**.
+
+### Install as an app
+
+The site is a Progressive Web App. In Chrome on Android, open the site and choose **⋮ → Install app** (or **Add to home screen**); on iPhone, use **Share → Add to Home Screen** in Safari. Desktop Chrome and Edge show an install icon in the address bar.
+
+Once installed, the whole wiki is saved on the device and works without internet. When online, pages load fresh; each deploy bumps the cached copy to the new version.
+
+How it works: `docs/manifest.webmanifest` describes the app, and `scripts/build_sw.py` runs after each build to generate `sw.js`, a service worker that precaches every page and asset (template in `scripts/sw.template.js`).
 
 ### Offline
 
