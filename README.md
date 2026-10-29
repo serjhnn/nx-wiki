@@ -19,17 +19,17 @@ The plan is to publish it as a website so the knowledge is easy to browse and se
 - **References**: cheat sheets, links and summaries of articles, books and courses
 - **Ideas**: drafts, open questions and things to explore later
 
-## Planned structure
-
-The layout will evolve, but roughly:
+## Structure
 
 ```
 nx-wiki/
-├── README.md       # this file
-├── docs/           # the knowledge itself, as Markdown pages
-│   ├── index.md    # start page / table of contents
-│   └── <topic>/    # one folder per topic area
-└── assets/         # images and other files referenced by pages
+├── README.md                  # this file
+├── mkdocs.yml                 # site config: title, theme, navigation
+├── requirements.txt           # Python dependencies (MkDocs + Material)
+├── docs/                      # the knowledge itself, as Markdown pages
+│   ├── index.md               # start page
+│   └── <topic>/               # one folder per topic area
+└── .github/workflows/deploy.yml  # publishes the site to GitHub Pages
 ```
 
 ## Writing a page
@@ -37,15 +37,35 @@ nx-wiki/
 1. Pick the topic folder under `docs/` (or create a new one).
 2. Add a Markdown file with a short, descriptive name, e.g. `git-rebase.md`.
 3. Start with a title and a one-line summary, then the content.
-4. Link to related pages with relative links, e.g. `[Git basics](../git/basics.md)`.
-5. Commit and push.
+4. Add the page to the `nav` section of `mkdocs.yml`.
+5. Link to related pages with relative links, e.g. `[Git basics](../git/basics.md)`.
+6. Commit and push.
 
-## Turning it into a web page
+See `docs/getting-started/writing-pages.md` for a formatting cheat sheet (callouts, tabs, code blocks, diagrams).
 
-The site isn't set up yet. Options under consideration include static site generators that turn a folder of Markdown into a searchable website, such as [MkDocs](https://www.mkdocs.org/) (with Material theme), [Docusaurus](https://docusaurus.io/), [VitePress](https://vitepress.dev/) or [Docsify](https://docsify.js.org/), hosted for free on GitHub Pages.
+## The website
 
-This section will be updated once a tool is chosen, with instructions for previewing the site locally and deploying it.
+The site is built with [MkDocs](https://www.mkdocs.org/) and the [Material](https://squidfunk.github.io/mkdocs-material/) theme.
+
+### Preview locally
+
+```bash
+python3 -m venv .venv
+source .venv/bin/activate
+pip install -r requirements.txt
+mkdocs serve
+```
+
+Then open <http://127.0.0.1:8000>. The page reloads automatically when you save a file.
+
+### Publishing
+
+Every push to `main` runs the **Deploy site** GitHub Action, which builds the site and publishes it to GitHub Pages.
+
+One-time setup: in the repository on GitHub, go to **Settings → Pages** and set **Source** to **GitHub Actions**.
+
+> **Note:** Material for MkDocs reaches end of life on May 5, 2027. Its successor, [Zensical](https://zensical.org/), is built by the same team and reads the existing `mkdocs.yml`, so migrating later should be straightforward.
 
 ## Status
 
-🌱 Early days. The structure and tooling are still being figured out.
+🌱 Early days. The site is set up; the content is just getting started.
