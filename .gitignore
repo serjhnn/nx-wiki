@@ -7,3 +7,6 @@ __pycache__/
 
 # Zensical build cache
 .cache/
+
+# Downloadable offline build
+site-offline/

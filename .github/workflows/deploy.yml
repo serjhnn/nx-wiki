@@ -24,7 +24,13 @@ jobs:
           python-version: "3.12"
           cache: pip
       - run: pip install -r requirements.txt
-      - run: zensical build --strict
+      - name: Build site
+        run: zensical build --strict
+      - name: Build offline copy
+        run: |
+          NX_OFFLINE=true NX_SITE_DIR=site-offline zensical build --strict
+          mv site-offline nx-wiki
+          zip -qr site/nx-wiki-offline.zip nx-wiki
       - uses: actions/upload-pages-artifact@v3
         with:
           path: site

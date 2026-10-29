@@ -3,6 +3,7 @@ site_description: My personal knowledge base
 repo_url: https://github.com/serjhnn/nx-wiki
 repo_name: serjhnn/nx-wiki
 edit_uri: edit/main/docs/
+site_dir: !ENV [NX_SITE_DIR, site]
 
 theme:
   name: material
@@ -36,13 +37,29 @@ theme:
         icon: lucide/moon
         name: Switch to dark mode
 
+plugins:
+  - search
+  # Download web fonts and Mermaid at build time and serve them from the
+  # site itself, so pages don't depend on external servers
+  - privacy:
+      assets_exclude:
+        - unpkg.com/pyodide*
+        - unpkg.com/ace-builds*
+        - unpkg.com/glightbox*
+        - cdn.jsdelivr.net/*
+        - cdn.plyr.io/*
+  # Make the site work when opened from disk (file://); only for the
+  # downloadable offline copy, enabled with NX_OFFLINE=true
+  - offline:
+      enabled: !ENV [NX_OFFLINE, false]
+
 extra_css:
   - assets/style.css
-  - https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css
+  - assets/vendor/katex/katex.min.css
 
 extra_javascript:
-  - https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js
-  - https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js
+  - assets/vendor/katex/katex.min.js
+  - assets/vendor/katex/contrib/auto-render.min.js
   - assets/katex.js
 
 markdown_extensions:

@@ -31,6 +31,7 @@ nx-wiki/
 ├── docs/                      # the knowledge itself, as Markdown pages
 │   ├── index.md               # start page
 │   ├── assets/style.css       # custom look: colors, fonts, headings
+│   ├── assets/vendor/katex/   # bundled KaTeX for math rendering
 │   └── <topic>/               # one folder per topic area
 └── .github/workflows/deploy.yml  # publishes the site to GitHub Pages
 ```
@@ -66,6 +67,18 @@ Then open <http://127.0.0.1:8000>. The page reloads automatically when you save 
 Every push to `main` runs the **Deploy site** GitHub Action, which builds the site and publishes it to GitHub Pages at <https://serjhnn.github.io/nx-wiki/>.
 
 One-time setup: in the repository on GitHub, go to **Settings → Pages** and set **Source** to **GitHub Actions**.
+
+### Offline
+
+The site doesn't depend on any external servers: KaTeX is bundled in `docs/assets/vendor/katex`, and the `privacy` plugin downloads the web fonts and Mermaid at build time and serves them from the site itself.
+
+Each deploy also builds an offline copy (with the `offline` plugin, so it works when opened from disk) and publishes it as [nx-wiki-offline.zip](https://serjhnn.github.io/nx-wiki/nx-wiki-offline.zip). Unzip it and open `nx-wiki/index.html`.
+
+To build the offline copy locally:
+
+```bash
+NX_OFFLINE=true NX_SITE_DIR=site-offline zensical build
+```
 
 ## Status
 
