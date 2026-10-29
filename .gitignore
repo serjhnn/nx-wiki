@@ -10,3 +10,6 @@ __pycache__/
 
 # Downloadable offline build
 site-offline/
+app/node_modules/
+*.keystore
+*.jks

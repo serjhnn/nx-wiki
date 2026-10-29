@@ -1,0 +1,11 @@
+{
+  "appId": "io.github.serjhnn.nxwiki",
+  "appName": "nx-wiki",
+  "webDir": "../site-offline",
+  "backgroundColor": "#141413",
+  "plugins": {
+    "SystemBars": {
+      "style": "DARK"
+    }
+  }
+}

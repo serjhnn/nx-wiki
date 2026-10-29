@@ -37,7 +37,8 @@ nx-wiki/
 │   └── <topic>/               # one folder per topic area
 ├── overrides/main.html        # adds the app manifest and icons to every page
 ├── scripts/                   # generates the service worker at deploy time
-└── .github/workflows/deploy.yml  # publishes the site to GitHub Pages
+├── app/                       # Android app (Capacitor) wrapping the offline copy
+└── .github/workflows/         # deploy.yml publishes the site; android.yml builds the app
 ```
 
 ## Writing a page
@@ -94,6 +95,38 @@ To build the offline copy locally:
 
 ```bash
 NX_OFFLINE=true NX_SITE_DIR=site-offline zensical build
+```
+
+### Android app
+
+`app/` holds an Android app built with [Capacitor](https://capacitorjs.com/): a native shell with a full-screen WebView that shows the offline copy of the wiki, stored inside the app. `app/android/` is a regular Android Studio project.
+
+The **Android app** GitHub Action (`.github/workflows/android.yml`) builds it:
+
+- **On every push that changes `app/`**, or from **Actions → Android app → Run workflow**: builds the APK (and an `.aab` for Google Play), uploads them as the `nx-wiki-android` artifact, then installs the APK on an emulator and saves screenshots as `emulator-screenshots`.
+- **On a version tag** (e.g. `git tag v1.0 && git push origin v1.0`): also publishes a GitHub Release with the APK. Open the release on the phone and tap the `.apk` to install or update.
+
+The app's content is fixed at build time, so rebuild it (push a new tag) to get new pages into the app.
+
+#### Signing key
+
+Without a key, CI signs the APK with a throwaway debug key, so each build has to be uninstalled before the next one installs. To sign with your own key (needed for updates in place and for Google Play), create it once and keep a backup, because a lost key means users must reinstall:
+
+```bash
+keytool -genkeypair -v -keystore nx-wiki.keystore -alias nx-wiki -keyalg RSA -keysize 4096 -validity 10000
+base64 -w0 nx-wiki.keystore      # copy the output
+```
+
+Then add four secrets under **Settings → Secrets and variables → Actions**: `NX_KEYSTORE_BASE64` (the base64 output), `NX_KEYSTORE_PASSWORD`, `NX_KEY_ALIAS` (`nx-wiki`) and `NX_KEY_PASSWORD`. Never commit the `.keystore` file (`.gitignore` blocks it).
+
+#### Build locally
+
+Needs Node.js, JDK 21 and the Android SDK (or Android Studio):
+
+```bash
+NX_OFFLINE=true NX_SITE_DIR=site-offline zensical build
+cd app && npm ci && npx cap sync android
+cd android && ./gradlew assembleRelease     # or: npx cap open android
 ```
 
 ## Status

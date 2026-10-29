@@ -1,0 +1,16 @@
+{
+  "name": "nx-wiki-app",
+  "private": true,
+  "description": "Android app for nx-wiki, built with Capacitor",
+  "scripts": {
+    "sync": "cap sync android"
+  },
+  "dependencies": {
+    "@capacitor/android": "^8.6.0",
+    "@capacitor/app": "^8.1.2",
+    "@capacitor/core": "^8.6.0"
+  },
+  "devDependencies": {
+    "@capacitor/cli": "^8.6.0"
+  }
+}

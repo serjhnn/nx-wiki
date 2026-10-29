@@ -14,4 +14,5 @@ nx-wiki is a personal knowledge base published at <https://serjhnn.github.io/nx-
 - Math: `$...$` / `$$...$$`, rendered with KaTeX bundled in `docs/assets/vendor/katex`.
 - Offline: the `privacy` plugin self-hosts fonts and Mermaid; `NX_OFFLINE=true NX_SITE_DIR=site-offline zensical build` makes the file:// copy that CI zips as `nx-wiki-offline.zip`.
 - PWA: `docs/manifest.webmanifest`, `overrides/main.html`, and `scripts/build_sw.py` (run after each build) generating `sw.js` from `scripts/sw.template.js`.
+- Android app: Capacitor project in `app/` (`webDir` is `../site-offline`, the offline build, because Capacitor serves `index.html` for extensionless paths). `.github/workflows/android.yml` builds the APK, runs it on an emulator for screenshots, and publishes a release on `v*` tags. Signing comes from `NX_KEYSTORE_*` / `NX_KEY_*` secrets.
 - Check changes with `zensical build --strict` before committing.
