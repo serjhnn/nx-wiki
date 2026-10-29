@@ -4,4 +4,11 @@
   <link rel="manifest" href="{{ 'manifest.webmanifest' | url }}">
   <meta name="theme-color" content="#141413">
   <link rel="apple-touch-icon" href="{{ 'assets/icons/apple-touch-icon.png' | url }}">
+  <script>
+    // Apply the saved text size before the page renders (see assets/zoom.js)
+    try {
+      var zoom = parseFloat(localStorage.getItem("nx-zoom"));
+      if (zoom > 0) document.documentElement.style.setProperty("--nx-zoom", zoom);
+    } catch (e) {}
+  </script>
 {% endblock %}

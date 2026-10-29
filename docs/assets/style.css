@@ -112,3 +112,32 @@
 /* Math (KaTeX): keep display equations compact */
 .md-typeset div.arithmatex { margin: 1em 0; overflow-x: auto; overflow-y: hidden; }
 .md-typeset div.arithmatex .katex-display { margin: 0; }
+
+/* Text size control (assets/zoom.js): the theme sizes everything in rem, so
+   scaling the root font size zooms the whole page */
+html { font-size: calc(125% * var(--nx-zoom, 1)); }
+@media screen and (min-width: 100em) { html { font-size: calc(137.5% * var(--nx-zoom, 1)); } }
+@media screen and (min-width: 125em) { html { font-size: calc(150% * var(--nx-zoom, 1)); } }
+
+.nx-zoom { display: flex; align-items: center; }
+.nx-zoom button { color: inherit; cursor: pointer; }
+.nx-zoom button:disabled { opacity: 0.35; cursor: default; }
+.nx-zoom__reset {
+  margin: 0 0.1rem;
+  padding: 0.1rem 0.35rem;
+  border-radius: 0.3rem;
+  font-size: 0.6rem;
+  font-variant-numeric: tabular-nums;
+  background: var(--md-default-fg-color--lightest);
+}
+.nx-zoom__reset[hidden] { display: none; }
+
+/* Keep the header at its normal size so its buttons always fit, and keep the
+   sticky sidebars directly below it */
+.md-header { zoom: calc(1 / var(--nx-zoom, 1)); }
+@media screen and (min-width: 60em) {
+  .md-sidebar--secondary { top: calc(2.4rem / var(--nx-zoom, 1)); }
+}
+@media screen and (min-width: 76.25em) {
+  .md-sidebar--primary { top: calc(2.4rem / var(--nx-zoom, 1)); }
+}

@@ -72,6 +72,10 @@ Every push to `main` runs the **Deploy site** GitHub Action, which builds the si
 
 One-time setup: in the repository on GitHub, go to **Settings → Pages** and set **Source** to **GitHub Actions**.
 
+### Text size
+
+The **A−** / **A+** buttons in the header scale the whole page (text, headings, code, tables and math) from 80% to 200%, independently of browser zoom. Tap the percentage to reset. The choice is saved per device (`docs/assets/zoom.js`; applied before the page renders by a snippet in `overrides/main.html`).
+
 ### Install as an app
 
 The site is a Progressive Web App. In Chrome on Android, open the site and choose **⋮ → Install app** (or **Add to home screen**); on iPhone, use **Share → Add to Home Screen** in Safari. Desktop Chrome and Edge show an install icon in the address bar.
