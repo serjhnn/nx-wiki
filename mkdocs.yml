@@ -28,8 +28,16 @@ theme:
     - content.action.edit
     - toc.follow
   palette:
+    # The toggle cycles dark -> full black -> light. Full black reuses the
+    # slate (dark) scheme; primary "black" lets style.css tell it apart
     - scheme: slate
       primary: custom
+      accent: custom
+      toggle:
+        icon: lucide/moon-star
+        name: Switch to full black mode
+    - scheme: slate
+      primary: black
       accent: custom
       toggle:
         icon: lucide/sun

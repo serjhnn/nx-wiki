@@ -59,6 +59,21 @@
   --md-footer-fg-color--lighter: #faf9f552;
 }
 
+/* Full black: pure #000 page (OLED), same cream text and clay accent */
+[data-md-color-scheme="slate"][data-md-color-primary="black"] {
+  --md-primary-fg-color: #000000;
+  --md-primary-fg-color--light: #111111;
+  --md-primary-fg-color--dark: #000000;
+  --md-default-bg-color: #000000;
+  --md-default-bg-color--light: #000000e6;
+  --md-code-bg-color: #111111;
+  --md-code-bg-color--light: #111111e6;
+  --md-code-bg-color--lighter: #1111118a;
+  --md-typeset-a-color: var(--nx-clay);
+  --md-footer-bg-color: #0a0a0a;
+  --md-footer-bg-color--dark: #000000;
+}
+
 /* Header and tabs blend into the page, separated by a hairline */
 .md-header, .md-tabs {
   background-color: var(--md-default-bg-color);
