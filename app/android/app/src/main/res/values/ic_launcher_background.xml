@@ -1,4 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="ic_launcher_background">#141413</color>
+    <!-- Clay tile behind the NX letters of the adaptive launcher icon -->
+    <color name="ic_launcher_background">#d97757</color>
+    <!-- The site's dark background, behind the splash screen and the web view -->
+    <color name="nx_background">#141413</color>
 </resources>

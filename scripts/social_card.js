@@ -1,6 +1,7 @@
 // Renders docs/assets/social-card.png, the 1200x630 image shown when a
 // link to the site is shared (Instagram DMs, WhatsApp, Telegram, ...).
-// Run from the repo root after changing the logo or the description:
+// Run from the repo root after changing the logo (scripts/icons.js) or the
+// description:
 //   node scripts/social_card.js
 const fs = require("fs");
 const { chromium } = require("playwright");
