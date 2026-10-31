@@ -18,7 +18,7 @@ const html = `<!doctype html><html><head>
 </style></head><body>
   <div class="logo">${logo}</div>
   <h1>nx-wiki</h1>
-  <p>My personal knowledge base</p>
+  <p>nx knowledge base</p>
   <div class="bar"></div>
 </body></html>`;
 

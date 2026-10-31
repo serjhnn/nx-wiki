@@ -1,7 +1,7 @@
 {
   "name": "nx-wiki",
   "short_name": "nx-wiki",
-  "description": "My personal knowledge base",
+  "description": "nx knowledge base",
   "id": "./",
   "start_url": "./",
   "scope": "./",
