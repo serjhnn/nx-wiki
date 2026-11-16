@@ -4,12 +4,13 @@ How rockets produce thrust, how much they can change their speed, and how they a
 
 ## The big picture
 
-A rocket carries everything it needs to make thrust: both fuel and oxidiser (or another reaction mass). That makes it the only practical engine for space, where there is no air to breathe or push against. Two questions shape every rocket:
+A rocket carries everything it needs to make thrust: both fuel and oxidiser (or another reaction mass). That makes it the only practical engine for space, where there is no air to breathe or push against. This section answers three questions:
 
 | Question | Answered by | Page |
 |---|---|---|
 | How hard and how efficiently can it push? | Thrust, specific impulse, the rocket equation, engine design | [Rocket engines](rocket-engines.md) |
 | How does it get where it should go? | Navigation, guidance and control (GNC) | [Guidance, navigation and control](guidance.md) |
+| How do I build and fly one myself? | Model rocketry: design software, motors, stability, recovery, electronics | [Model rockets](model-rockets.md) |
 
 ## Key numbers
 
@@ -25,3 +26,4 @@ A rocket carries everything it needs to make thrust: both fuel and oxidiser (or 
 
 - [Rocket engines](rocket-engines.md): thrust, specific impulse, the rocket equation, nozzles, engine types and cycles
 - [Guidance, navigation and control](guidance.md): inertial navigation, Kalman filters, ascent guidance and steering the vehicle
+- [Model rockets](model-rockets.md): tools, software, motors, stability and recovery for building your own

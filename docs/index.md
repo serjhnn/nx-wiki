@@ -9,7 +9,7 @@ Use the search bar at the top to find anything, or browse the sections in the na
 - [Getting started](getting-started/index.md): how this wiki is organised and how to add to it
 - [Mechanics](mechanics/index.md): classical, continuum and fluid mechanics
 - [Networking](networking/index.md): network layers, protocols and how devices talk to each other
-- [Rocketry](rocketry/index.md): rocket engines, the rocket equation, and guidance, navigation and control
+- [Rocketry](rocketry/index.md): rocket engines, guidance, navigation and control, and building model rockets
 
 ## Reading offline
 
