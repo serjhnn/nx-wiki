@@ -117,3 +117,7 @@ nav:
   - Networking:
       - networking/index.md
       - MAC layer: networking/mac-layer.md
+  - Rocketry:
+      - rocketry/index.md
+      - Rocket engines: rocketry/rocket-engines.md
+      - Guidance, navigation and control: rocketry/guidance.md
